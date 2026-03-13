@@ -388,7 +388,6 @@ export function OnboardingPortal() {
                           files={data.branding.shopLogo}
                           onChange={handleLogoUpload}
                           accept="image/*,.pdf,.svg"
-                          helperText="Store the file in /public/anchor-logo.png to replace the welcome screen logo later."
                         />
                         <div className="grid gap-4 sm:grid-cols-2">
                           <ColorField
