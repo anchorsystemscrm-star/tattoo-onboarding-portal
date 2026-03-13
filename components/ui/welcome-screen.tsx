@@ -14,7 +14,7 @@ export function WelcomeScreen({ onBegin }: WelcomeScreenProps) {
     <section className="panel relative overflow-hidden px-6 py-10 sm:px-10 sm:py-14">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,180,106,0.18),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(69,107,169,0.16),transparent_24%)]" />
       <div className="relative mx-auto max-w-3xl text-center">
-        <div className="mb-8 flex justify-center">
+        <div className="mb-4 flex justify-center">
           {!logoMissing ? (
             <img
               src={ANCHOR_LOGO_URL}
