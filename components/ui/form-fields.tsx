@@ -31,7 +31,9 @@ function FieldShell({
         {label}
         {required ? <span className="text-accent">*</span> : null}
       </label>
+
       {children}
+
       {error ? (
         <span className="block text-sm text-rose-300">{error}</span>
       ) : helperText ? (
@@ -41,7 +43,8 @@ function FieldShell({
   );
 }
 
-interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+interface TextInputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
   label: string;
   value: string;
   onChange: (value: string) => void;
@@ -211,7 +214,6 @@ interface FileUploadFieldProps {
   onChange: (files: FileList | null) => void;
   accept?: string;
   multiple?: boolean;
-  helperText?: string;
 }
 
 export function FileUploadField({
@@ -220,13 +222,12 @@ export function FileUploadField({
   onChange,
   accept,
   multiple,
-  helperText,
 }: FileUploadFieldProps) {
   const inputId = useId();
   const entries = Array.isArray(files) ? files : files ? [files] : [];
 
   return (
-    <FieldShell label={label} helperText={helperText} htmlFor={inputId}>
+    <FieldShell label={label} htmlFor={inputId}>
       <div className="rounded-2xl border border-dashed border-line bg-white/[0.03] p-4">
         <input
           id={inputId}
@@ -236,6 +237,7 @@ export function FileUploadField({
           onChange={(event) => onChange(event.target.files)}
           className="block w-full cursor-pointer text-sm text-slate-300 file:mr-4 file:rounded-full file:border-0 file:bg-accent file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[#08111f] hover:file:opacity-90"
         />
+
         {entries.length > 0 ? (
           <ul className="mt-4 space-y-2 text-sm text-slate-300">
             {entries.map((file) => (
