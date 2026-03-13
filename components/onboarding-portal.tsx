@@ -798,7 +798,6 @@ export function OnboardingPortal() {
                         onChange={(files) => handleMultiFileUpload("consentForms", files)}
                         multiple
                         accept=".pdf,.doc,.docx,image/*"
-                        helperText="Connect Vercel Blob, Supabase Storage, or S3 later to persist file contents."
                       />
                       <FileUploadField
                         label="Upload Aftercare Instructions (optional)"
@@ -806,7 +805,6 @@ export function OnboardingPortal() {
                         onChange={(files) => handleMultiFileUpload("aftercareInstructions", files)}
                         multiple
                         accept=".pdf,.doc,.docx,image/*"
-                        helperText="This placeholder stores file metadata in the payload until storage is wired."
                       />
                     </div>
                     <TextAreaField
