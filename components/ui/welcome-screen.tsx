@@ -19,7 +19,7 @@ export function WelcomeScreen({ onBegin }: WelcomeScreenProps) {
             <img
               src={ANCHOR_LOGO_URL}
               alt="Anchor Systems"
-              className="h-40 w-auto object-contain sm:h-48"
+              className="h-52 w-auto object-contain sm:h-64"
               onError={() => setLogoMissing(true)}
             />
           ) : (
